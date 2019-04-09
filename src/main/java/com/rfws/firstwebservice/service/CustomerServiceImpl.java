@@ -2,9 +2,11 @@ package com.rfws.firstwebservice.service;
 
 import com.rfws.firstwebservice.domain.Customer;
 import com.rfws.firstwebservice.repositories.CustomerRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerRepository customerRepository;
