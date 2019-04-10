@@ -17,7 +17,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer findCustomerById(Long id) {
-        return customerRepository.getOne(id);
+        //if (customerRepository.findById(id).isPresent()) {
+            return customerRepository.findById(id).get();
+        //}
+        //System.out.println("Customer doesn't exist");
+        //return null;
     }
 
     @Override

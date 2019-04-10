@@ -2,9 +2,7 @@ package com.rfws.firstwebservice.controllers;
 
 import com.rfws.firstwebservice.domain.Customer;
 import com.rfws.firstwebservice.service.CustomerService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +23,10 @@ public class CustomerController {
     @GetMapping
     List<Customer> getAllCustomers(){
        return customerService.findAllCustomers();
+    }
+    //get mapping includes request mapping
+    @GetMapping("/{id}")
+    public Customer getCustomerById(@PathVariable Long id){
+        return customerService.findCustomerById(id);
     }
 }
