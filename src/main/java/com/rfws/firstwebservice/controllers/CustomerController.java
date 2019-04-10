@@ -42,4 +42,10 @@ public class CustomerController {
     public void deleteCustomer(@RequestBody Customer customer){
         customerService.deleteCustomer(customer);
     }
+
+    @PutMapping
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void updateCustomer(@RequestBody Customer customer){
+        customerService.updateCustomer(customer);
+    }
 }

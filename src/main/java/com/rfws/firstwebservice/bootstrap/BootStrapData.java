@@ -6,7 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-//initialization routine to initialize data
+//initialization routine to initialize data, commandlinerunner tells the program to run me at startup
 public class BootStrapData implements CommandLineRunner {
 
     private final CustomerRepository customerRepository;
