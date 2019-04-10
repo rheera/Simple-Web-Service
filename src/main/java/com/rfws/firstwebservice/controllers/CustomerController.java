@@ -2,6 +2,7 @@ package com.rfws.firstwebservice.controllers;
 
 import com.rfws.firstwebservice.domain.Customer;
 import com.rfws.firstwebservice.service.CustomerService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,5 +29,17 @@ public class CustomerController {
     @GetMapping("/{id}")
     public Customer getCustomerById(@PathVariable Long id){
         return customerService.findCustomerById(id);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Customer saveCustomer(@RequestBody Customer customer){
+        return customerService.saveCustomer(customer);
+    }
+
+    @DeleteMapping
+    @ResponseStatus(HttpStatus.GONE)
+    public void deleteCustomer(@RequestBody Customer customer){
+        customerService.deleteCustomer(customer);
     }
 }
